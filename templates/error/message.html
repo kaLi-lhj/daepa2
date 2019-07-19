@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block title %}{{ code_name }}{% endblock %}
+{% block content %}
+<fieldset>
+    <legend>{{ code_name }}</legend>
+    <p>
+        {{ note }}
+    </p>
+    <button type="button"
+    onclick="location.href='{% url 'board:index' %}'">돌아가기</button>
+</fieldset>
+{% endblock %}

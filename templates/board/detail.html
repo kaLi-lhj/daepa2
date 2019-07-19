@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block title %}{{ board.title }}{% endblock %}
+{% block content %}
+<div class="blog-header">
+    <div class="container">
+        <h1 class="blog-title">{{ board.title }}</h1>
+    </div>
+</div>
+<div class="blog-post">
+    <div class="container">
+        <p class="blog-post-meta">
+            생성일 : {{ board.create_date }}<br>
+            수정일 : {{ board.update_date }}<br>
+            작성자 : {{ board.author }}
+        </p>
+        <p>{{ board.context }}</p>
+    </div>
+</div>
+<div class="row text-center">
+    <span>
+        <button class="btn btn-sm btn-success" type="button" 
+        onclick="location.href='{% url 'board:like_hate' %}?like=True&bid={{ board.id }}'">
+            추천수 : {{ board.like_cnt }}
+        </button>
+    </span>
+    <span>
+        <button class="btn btn-sm btn-danger" type="button" 
+        onclick="location.href='{% url 'board:like_hate' %}?like=False&bid={{ board.id }}'">
+            비추천수 : {{ board.hate_cnt }}
+        </button>
+    </span>
+</div>
+<div class="text-right">
+    <div class="row btn-group">
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'board:index' %}'">목록</button>
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'board:update' board.id %}'">수정</button>
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'board:delete' board.id %}'">삭제</button>
+    </div>
+</div>
+{% endblock %}

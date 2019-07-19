@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block title %}사전 검색{% endblock %}
+{% block content %}
+    
+    <div class="row" style="TEXT-ALIGN: center">
+        <table class="table table-hover">
+            <tr>
+                    <form name="lnb_searchForm" id="lnb.searchForm" method="get" action="https://dict.naver.com/" target="_blank" accept-charset="UTF-8">
+                        <fieldset>
+                            <legend>사전 검색</legend>
+                            <input type="text" title="뉴스 검색" name="query" accesskey="s" class="text_index" style="ime-mode:active;"/>
+                            <input type="hidden" name="where" value="news">
+                            <input type="hidden" name="ie" value="utf8">
+                            <input type="hidden" name="sm" value="nws_hty">
+                            <button type="submit" class="btn_search_lnb nclicks(LNB.search)"><span class="tx"><span class="blind">검색</span></span></button>
+                        </fieldset>
+                    </form>
+            </tr>
+            <br><br><br>
+            <a href="https://dict.naver.com/"><img src='https://cdn.pixabay.com/photo/2018/06/17/07/19/books-3480058__340.jpg' title="네이버 dictionary 이미지" border="0" alt="image loading error" width="300" height="300"><br>네이버 사전 메인으로 이동!</a>
+            
+        </table>
+        
+    </div>
+    {% endblock %}
+    
+    
+
+

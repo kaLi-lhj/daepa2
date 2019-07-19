@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block title %}추가/수정{% endblock %}
+{% block content %}
+<form action="{{ action }}" method="post">{% csrf_token %}
+    <div class="form-group">
+        <input class="form-control" type="text" name="title" placeholder="제목" value="{{ board.title }}">
+    </div>
+    <div class="form-group">
+        <select class="form-control" name="sub_title" id="sub_title">
+            <option value="자유게시판" id="free">자유게시판</option>
+            <option value="연예게시판" id="star">연예게시판</option>
+            <option value="유머게시판" id="humo">유머게시판</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" name="author" placeholder="작성자" value="{{ user.username }}" disabled>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" name="context">{{ board.context }}</textarea>
+    </div>
+    <div class="checkbox">
+    {% if not board.no_del %}
+        <label><input class="form-control" type="checkbox" name="no_del">삭제금지</label>
+    {% else %}
+        <label><input class="form-control" type="checkbox" name="no_del" checked>삭제금지</label>
+    {% endif %}
+    </div>
+    <div class="row text-right">
+        <button class="btn btn-success" type="submit">전송</button>
+    </div>
+</form>
+{% endblock %}

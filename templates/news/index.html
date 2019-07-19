@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block title %}뉴스 검색{% endblock %}
+{% block content %}
+    
+    <div class="row" style="TEXT-ALIGN: center">
+        <table class="table table-hover">
+            <tr>
+                    <form name="lnb_searchForm" id="lnb.searchForm" method="get" action="https://search.naver.com/search.naver" target="_blank" accept-charset="UTF-8">
+                        <fieldset>
+                            <legend>뉴스 검색</legend>
+                            <input type="text" title="뉴스 검색" name="query" accesskey="s" class="text_index" style="ime-mode:active;"/>
+                            <input type="hidden" name="where" value="news">
+                            <input type="hidden" name="ie" value="utf8">
+                            <input type="hidden" name="sm" value="nws_hty">
+                            <button type="submit" class="btn_search_lnb nclicks(LNB.search)"><span class="tx"><span class="blind">검색</span></span></button>
+                        </fieldset>
+                    </form>
+                
+            </tr>
+            
+        </table>
+    </div>
+    {% endblock %}
+    
+    
+
+

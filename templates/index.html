@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}메인 페이지{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bs/css/bootstrap.min.css' %}">
+    <script src="{% static 'bs/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="row">
+    <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'index' %}">myWeb</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{% url 'board:index' %}">게시판</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'news:index' %}">뉴스</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'webtoon:index' %}">웹툰</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'dict:index' %}">사전</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a href="#">{{ user.username }}님 환영합니다.</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'modi_account' %}">정보수정</a>
+                            </li>
+                            
+                        {% else %}
+                            <li>
+                                <a href="{% url 'reg_account' %}">회원가입</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'login' %}">로그인</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<div style="padding:60px 0px 0px 0px">
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+</div>
+</body>
+</html>
