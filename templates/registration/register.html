@@ -1,52 +1,19 @@
-{% extends 'index.html' %}
+<!DOCTYPE html>
+<html>
 
-{% block content %}
-<div class="row text-center pad-top ">
-    <div class="col-md-12">
-        <h1>회원 {{ type }}</h1>
-    </div>
-</div>
-<div class="row pad-top">
-    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <strong>회원 {{ type }}</strong>  
-            </div>
-            <div class="panel-body">
-                <form id="register" action="{{ action }}" method="POST">{% csrf_token %}<br/>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" class="form-control" placeholder="아이디 입력" name="username" value="{{ username }}">
-                    </div>
-                    {% if username_info %}<h6 class="alert alert-danger">이미존재하는 아이디</h6>{% endif %}
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" class="form-control" placeholder="패스워드 입력" name="password">
-                    </div>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" class="form-control" placeholder="패스워드 확인" name="chkpw">
-                    </div>
-                    {% if password_info %}<h6 class="alert alert-danger">잘못된 패스워드 입력</h6>{% endif %}
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                        <input type="text" class="form-control" placeholder="성" name="last_name" value="{{ last_name }}">
-                    </div>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                        <input type="text" class="form-control" placeholder="이름" name="first_name" value="{{ first_name }}">
-                    </div>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input type="text" class="form-control" placeholder="이메일 주소" name="email" value="{{ email }}">
-                    </div>
-                    <button type="submit" class="btn btn-success ">가입</button>
-                    <hr />
-                    이미 등록 되어 있습니까?
-                    <a href="{% url 'login' %}" >여기로 로그인</a>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <form action="{%url 'join1'%}">
+        <h1>회원가입</h1>
+        <button type="submit">대학생</button></form>
+        <form action="{%url 'join2'%}">
+        <button type="submit">고용주</button>
+        </form>
+    </body>
+</html>
