@@ -4,6 +4,9 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from random import random
 from django.contrib.auth import logout
+from myweb.models import Profile
+
+
 
 def mainIndex(request):
     data = {
@@ -19,6 +22,8 @@ def mainIndex(request):
 
 def regAccount(request):
     return render(request,'registration/register.html')
+
+
 
 def join1(request):
     if request.method == 'GET':
@@ -42,15 +47,13 @@ def join1(request):
             # 2개의 패스워드가 일치하는지 체크
             if request.POST.get('password') == request.POST.get('chkpw'):
                 # 계정 생성
-                user = User()
-                user.job= request.POST.get('employee')
-                user.username = request.POST.get('username')
-                user.set_password(request.POST.get('password'))
-                user.first_name = request.POST.get('first_name')
-                user.last_name = request.POST.get('last_name')
-                user.email = request.POST.get('email')
-                user.save()
-
+                user = User.objects.create_user(
+                username=request.POST["username"],
+                password=request.POST["chkpw"])
+                nickname = request.POST["nickname"]
+                profile = Profile(user=user, nickname=nickname)
+                profile.save()
+               
                 return redirect('login')
             else:
                 data = {
