@@ -18,12 +18,15 @@ def mainIndex(request):
     return render(request, 'index.html', data)
 
 def regAccount(request):
+    return render(request,'registration/register.html')
+
+def join1(request):
     if request.method == 'GET':
         data = {
-            'action':reverse('reg_account'),
+            'action':reverse('join1'),
             'type':'가입'
         }
-        return render(request, 'registration/register.html', data)
+        return render(request, 'registration/join1.html', data)
     elif request.method == 'POST':
         # 동일한 계정이 있는지 체크
         if User.objects.filter(username=request.POST.get('username')).exists():
@@ -40,6 +43,52 @@ def regAccount(request):
             if request.POST.get('password') == request.POST.get('chkpw'):
                 # 계정 생성
                 user = User()
+                user.job= request.POST.get('employee')
+                user.username = request.POST.get('username')
+                user.set_password(request.POST.get('password'))
+                user.first_name = request.POST.get('first_name')
+                user.last_name = request.POST.get('last_name')
+                user.email = request.POST.get('email')
+                user.save()
+
+                return redirect('login')
+            else:
+                data = {
+                    'password_info': True,
+                    'job': request.POST.get('employee'),
+                    'username': request.POST.get('username'),
+                    'first_name': request.POST.get('first_name'),
+                    'last_name': request.POST.get('last_name'),
+                    'email': request.POST.get('email'),
+                }
+                return render(request, 'registration/join1.html', data)
+
+def join2(request):
+    if request.method == 'GET':
+        data = {
+            'action':reverse('join2'),
+            'type':'가입'
+        }
+        return render(request, 'registration/join2.html', data)
+    elif request.method == 'POST':
+        # 동일한 계정이 있는지 체크
+        if User.objects.filter(username=request.POST.get('username')).exists():
+            # 동일한 계정이 있음을 알려줌
+            data = {
+                'username_info': True,
+                'job':request.POST.get('employer'),
+                'first_name': request.POST.get('first_name'),
+                'last_name': request.POST.get('last_name'),
+                'email': request.POST.get('email'),
+                
+            }
+            return render(request, 'registration/register.html', data)
+        else:
+            # 2개의 패스워드가 일치하는지 체크
+            if request.POST.get('password') == request.POST.get('chkpw'):
+                # 계정 생성
+                user = User()
+                user.job= request.POST.get('employer')
                 user.username = request.POST.get('username')
                 user.set_password(request.POST.get('password'))
                 user.first_name = request.POST.get('first_name')
@@ -56,7 +105,7 @@ def regAccount(request):
                     'last_name': request.POST.get('last_name'),
                     'email': request.POST.get('email'),
                 }
-                return render(request, 'registration/register.html', data)
+                return render(request, 'registration/join2.html', data)
 
 
 def modiAccount(request):

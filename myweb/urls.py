@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import include, re_path, path
 from django.contrib import admin
-from myweb.views import mainIndex, regAccount, modiAccount
+from myweb.views import mainIndex, regAccount, modiAccount, join1, join2
 from django.contrib.auth import views as auth_views
 
 
@@ -26,7 +26,12 @@ urlpatterns = [
     # 127.0.0.1:8000/admin/...
     path('admin/', admin.site.urls),
     re_path(r'^account/register/$', regAccount, name='reg_account'),
+
     re_path(r'^account/modified/$', modiAccount, name='modi_account'),
+    
+    re_path(r'^account/register/join1/$', join1, name='join1'),
+
+    re_path(r'^account/register/join2/$', join2, name='join2'),
 
     # 127.0.0.1:8000/board/...
     re_path(r'^board/', include(r'board.urls')),
