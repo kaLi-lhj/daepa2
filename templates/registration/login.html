@@ -13,7 +13,7 @@
                 <strong>로그인</strong>  
             </div>
             <div class="panel-body">
-                <form id="login" action="{% url 'login' %}" method="POST">{% csrf_token %}
+                <form id="login" action="{% url 'home' %}" method="POST">{% csrf_token %}
                     <div class="form-group input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input type="text" class="form-control" placeholder="Your Name" name="username">

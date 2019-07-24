@@ -17,6 +17,7 @@ from django.urls import include, re_path, path
 from django.contrib import admin
 from myweb.views import mainIndex, regAccount, modiAccount, join1, join2
 from django.contrib.auth import views as auth_views
+from main import views
 
 
 urlpatterns = [
@@ -50,6 +51,7 @@ urlpatterns = [
     
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('home/', views.home, name='home'),
 ]
 # 정규 표현식
 # [0-9] : 정수값 0 ~ 9 까지 패턴
