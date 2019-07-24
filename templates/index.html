@@ -52,50 +52,76 @@ ctrl+k+u : 다중주석해제 -->
 <body>
 
 <div id="header">
-	<div class="navi" style="top: 0px;">
-		<div class="sub_link_bg"></div>
-		<h1>
-			<a href="" class="btn_logo" onclick="eventTrack('');" title="대파"><span class="ir_text">대 파</span></a>
-        </h1>
+    <div class="navi" style="top: 0px;">
+        
+        <!--서브 바-->
+		<!-- <div class="sub_link_bg">
+            <h1>
+                <a href="" class="btn_logo" onclick="eventTrack('');" title="대파"><span class="ir_text">대 파</span></a>
+            </h1> -->
+            
+            
+           
+            <!-- 메인페이지 NAV BAR로 넣을 것임-->
+            <ul class="nav_top">
+                <div style="float:left;">
+                    <h1>
+                        <a href="" class="btn_logo" onclick="eventTrack('');" title="대파"><span class="ir_text">대 파</span></a>
+                    </h1>
+                </div>
+                <!-- <li class="sub">
+                    <a href="https://www.lifeplus.co.kr/about" class="mot2" onclick="eventTrack('lifeplus2019_gnb_about');"><span class="en">ABOUT</span></a>
+                    <div class="sub_link sub_link_about" style="width: 621px;">
+                        <a href="https://www.lifeplus.co.kr/about" onclick="eventTrack('lifeplus2019_gnb_about');" class="sub_a mot2"><span>ABOUT LIFEPLUS</span></a>
+                        <a href="https://www.lifeplus.co.kr/about/bi" onclick="eventTrack('lifeplus2019_gnb_bi');" class="sub_a mot2"><span>BI/VI</span></a>
+                        <a href="https://www.lifeplus.co.kr/about/lounge" onclick="eventTrack('lifeplus2019_gnb_about_lounge');" class="sub_a mot2"><span>LOUNGE</span></a>
+                    </div>
+                </li>
+                <li><a href="https://www.lifeplus.co.kr/service" class="mot2" onclick="eventTrack('lifeplus2019_gnb_service');"><span class="en">SERVICE</span></a></li>
+                
+                <li class="sub">
+                    <a href="https://www.lifeplus.co.kr/lifeplusx" class="mot2" onclick="eventTrack('lifeplus2019_gnb_promo_history');"><span class="en">PROMOTION</span></a>
+                    <div class="sub_link sub_link_promotion" style="width: 621px;">
+                        
+                        
+                        
+                        
+                        <a href="https://www.lifeplus.co.kr/lifeplusx" onclick="eventTrack('lifeplus2019_gnb_promo_history');" class="sub_a mot2"><span>GALLERY</span></a>
+                        <a href="https://www.lifeplus.co.kr/cinemaweek2019" onclick="eventTrack('lifeplus2019_gnb_promo_cinemaweek2019');" class="sub_a mot2"><span>시네마위크</span></a>
+                        <a href="https://www.lifeplus.co.kr/ambassador" onclick="eventTrack('lifeplus2019_gnb_promo_ambassador5th');" class="sub_a mot2"><span>앰배서더5기모집</span></a>
+                        
+                        
 
-        <!-- 메인페이지 NAV BAR로 넣을 것임-->
-		<ul class="nav_top">
-			<!-- <li class="sub">
-				<a href="https://www.lifeplus.co.kr/about" class="mot2" onclick="eventTrack('lifeplus2019_gnb_about');"><span class="en">ABOUT</span></a>
-				<div class="sub_link sub_link_about" style="width: 621px;">
-					<a href="https://www.lifeplus.co.kr/about" onclick="eventTrack('lifeplus2019_gnb_about');" class="sub_a mot2"><span>ABOUT LIFEPLUS</span></a>
-					<a href="https://www.lifeplus.co.kr/about/bi" onclick="eventTrack('lifeplus2019_gnb_bi');" class="sub_a mot2"><span>BI/VI</span></a>
-					<a href="https://www.lifeplus.co.kr/about/lounge" onclick="eventTrack('lifeplus2019_gnb_about_lounge');" class="sub_a mot2"><span>LOUNGE</span></a>
-				</div>
-			</li>
-			<li><a href="https://www.lifeplus.co.kr/service" class="mot2" onclick="eventTrack('lifeplus2019_gnb_service');"><span class="en">SERVICE</span></a></li>
-			
-			<li class="sub">
-				<a href="https://www.lifeplus.co.kr/lifeplusx" class="mot2" onclick="eventTrack('lifeplus2019_gnb_promo_history');"><span class="en">PROMOTION</span></a>
-				<div class="sub_link sub_link_promotion" style="width: 621px;">
-					
-					
-					
-					
-					<a href="https://www.lifeplus.co.kr/lifeplusx" onclick="eventTrack('lifeplus2019_gnb_promo_history');" class="sub_a mot2"><span>GALLERY</span></a>
-					<a href="https://www.lifeplus.co.kr/cinemaweek2019" onclick="eventTrack('lifeplus2019_gnb_promo_cinemaweek2019');" class="sub_a mot2"><span>시네마위크</span></a>
-					<a href="https://www.lifeplus.co.kr/ambassador" onclick="eventTrack('lifeplus2019_gnb_promo_ambassador5th');" class="sub_a mot2"><span>앰배서더5기모집</span></a>
-					
-					
-
-					
-					
-				</div>
-			</li>
-			<li><a href="https://www.lifeplus.co.kr/now" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_story');"><span class="en">STORY</span></a></li>
-			
-			<li><a href="https://www.lifeplus.co.kr/ambassador" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_ambassador');"><span>AMBASSADOR</span></a></li>
-            <li><a href="https://www.lifeplus.co.kr/notification" class="mot2" onclick="eventTrack('lifeplus2019_gnb_notification');"><span>NOTIFICATION</span></a></li> -->
-            <div style="float:right;">
-                <li><a href="{% url 'login' %}" ><h2>로그인</h2></a></li>
-                <li><a href="{% url 'reg_account' %}" ><h2>회원가입</h2></a></li>
-            </div>
-		</ul>
+                        
+                        
+                    </div>
+                </li>
+                <li><a href="https://www.lifeplus.co.kr/now" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_story');"><span class="en">STORY</span></a></li>
+                
+                <li><a href="https://www.lifeplus.co.kr/ambassador" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_ambassador');"><span>AMBASSADOR</span></a></li>
+                <li><a href="https://www.lifeplus.co.kr/notification" class="mot2" onclick="eventTrack('lifeplus2019_gnb_notification');"><span>NOTIFICATION</span></a></li> -->
+                <div style="float:right;">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="#"><h2>{{ user.profile.nickname }}님 환영합니다.</h2></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'modi_account' %}"><h2>정보수정</h2></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}"><h2>로그아웃</h2></a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'reg_account' %}"><h2>회원가입</h2></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}"><h2>로그인</h2></a>
+                    </li>
+                    {% endif %}
+                </div>
+            </ul>
+        
 		
        
 		
@@ -122,24 +148,7 @@ ctrl+k+u : 다중주석해제 -->
 
 <div id="wrap" class="main_wrap">
 	<div class="wrap_inner" style="transform: matrix(1, 0, 0, 1, 0, 0);">
-            {% if user.is_authenticated %}
-            <li>
-                <a href="#">{{ user.profile.nickname }}님 환영합니다.</a>
-            </li>
-            <li>
-                <a href="{% url 'modi_account' %}">정보수정</a>
-            </li>
-            <li>
-                <a href="{% url 'logout' %}">로그아웃</a>
-            </li>
-        {% else %}
-            <li>
-                <a href="{% url 'reg_account' %}">회원가입</a>
-            </li>
-            <li>
-                <a href="{% url 'login' %}">로그인</a>
-            </li>
-        {% endif %}
+            
 		<div class="section">
 			<div class="sec_inner sec_type1">
 				<div class="img_box left">
@@ -170,15 +179,17 @@ ctrl+k+u : 다중주석해제 -->
 			</div>
 			
 		</div>
-		<div class="section ">
+		<div class="section">
 			<div class="sec_inner sec_type2">
 				<div class="img_box right">
 					<div class="img_area">
 						<div class="img_inner main_img_link">
 							<a href="#">
+                                <!-- 두번째이미지-->
 								<img src="https://www.lifeplus.co.kr/_resource/_web/images/main/main_kv5.jpg" alt="" style="transform: matrix(1, 0, 0, 1, 0, 0);">
 							</a>
-							<div class="btn_cursor" style="transform: translate3d(635.5px, 172px, 0px);">
+                            <div class="btn_cursor" style="transform: translate3d(635.5px, 172px, 0px);">
+                                <!-- 커서이미지-->
 								<div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
 							</div>
 						</div>
@@ -189,71 +200,52 @@ ctrl+k+u : 다중주석해제 -->
 					<div class="copy_num enMP">02</div>
 					<div class="copy_area">
                             <div class="copy_title">
-                                    <br>CHOOSE FIT  
+                                    <br>"DO" YOU WANT  
                             </div>
-						<div class="copy_sub_txt" style="opacity: 1;">하고싶은 일을 ㅎ</div>
-						<div class="btn_more" style="opacity: 1;"><a href="https://www.lifeplus.co.kr/" class="g_btn_view_more">VIEW MORE</a></div>
+						<div class="copy_sub_txt" style="opacity: 1;">하고싶은 일을 하세요</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="section ">
-			<div class="sec_inner sec_type3">
-				<div class="img_box left">
-					<div class="img_area">
-						<div class="img_inner main_img_link">
-							<a href="#">
-								<img src="https://www.lifeplus.co.kr/_resource/_web/images/main/main_kv3.jpg" alt="" style="transform: matrix(1, 0, 0, 1, 0, 0);">
-							</a>
-							<div class="btn_cursor">
-								<div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
-							</div>
-						</div>
-						<div class="img_bg left" style="width: 0px;"></div>
-					</div>
-				</div>
-				<div class="copy_box right" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-					<div class="copy_num enMP">03</div>
-					<div class="copy_area">
-						<div class="copy_title"><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">L</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">I</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">F</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">E</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">P</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">L</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">U</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">S</span><br><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">A</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">M</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">M</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">A</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">S</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">S</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">A</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">D</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">O</span><span style="opacity: 1; font-size: 40px; transform: matrix(1, 0, 0, 1, 0, 0);">R</span></div>
-						<div class="copy_sub_txt" style="opacity: 1;">라이프플러스 앰배서더 5기 모집</div>
-						<div class="btn_more" style="opacity: 1;"><a href="https://www.lifeplus.co.kr/ambassador" class="g_btn_view_more">VIEW MORE</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section ">
-			<div class="sec_inner sec_type4">
-				<div class="img_box right">
-					<div class="img_area">
-						<div class="img_inner main_img_link">
-							<a href="#">
-								<img src="https://www.lifeplus.co.kr/_resource/_web/images/main/main_kv4.jpg" alt="">
-							</a>
-							<div class="btn_cursor" style="transform: translate3d(703.5px, 173px, 0px);">
-								<div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
-							</div>
-						</div>
-						<div class="img_bg right" style="width: 100%;"></div>
-					</div>
-				</div>
-				<div class="copy_box left" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, 100);">
-					<div class="copy_num enMP">04</div>
-					<div class="copy_area">
-						<div class="copy_title"><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">L</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">I</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">F</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">E</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">P</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">L</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">U</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">S</span><br><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">B</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">r</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">a</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">n</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">d</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);"> </span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">F</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">i</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">l</span><span style="opacity: 0; font-size: 42px; transform: matrix(1, 0, 0, 1, 30, 0);">m</span></div>
-						<div class="copy_sub_txt" style="opacity: 0;">LIFEPLUS가 추구하는 삶의 풍요로움</div>
-						<div class="btn_more" style="opacity: 0;"><a href="https://www.lifeplus.co.kr/about/bi?move=movie" class="g_btn_view_more">VIEW MORE</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="section">
+                <div class="sec_inner sec_type1">
+                    <div class="img_box left">
+                        <div class="img_area">
+                            <div class="img_inner main_img_link">
+                                <a href="#">
+                                    <!-- 세번째이미지-->
+                                    <img src="https://www.lifeplus.co.kr/_resource/_web/images/main/main_kv1.jpg" alt="" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                                </a>
+                                
+                                <div class="btn_cursor" style="transform: translate3d(516.5px, 0px, 0px);">
+                                    <!-- 커서이미지-->
+                                    <div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="img_bg top" style="transform: translate(0%, -100%) matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="img_bg left" style="width: 0px;"></div>
+                        </div>
+                    </div>
+                    <div class="copy_box right" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <div class="copy_num enMP">03</div>
+                        <div class="copy_area">
+                            <div class="copy_title">
+                                    <br>JOIN TO US  
+                            </div>
+                        <div class="copy_sub_txt" style="opacity: 1;">대파에 참여하세요.</div>
+                    </div>
+                </div>
+                
+            </div>
+		
 	</div>
 	<div class="section_paging left">
 		<div class="paging_txt now">1</div>
 		<div class="paging_box">
 			<div class="move_paging" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
 		</div>
-		<div class="paging_txt total">4</div>
+		<div class="paging_txt total">3</div>
 	</div>
 </div>
 
