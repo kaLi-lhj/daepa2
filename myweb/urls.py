@@ -17,6 +17,7 @@ from django.urls import include, re_path, path
 from django.contrib import admin
 from myweb.views import mainIndex, regAccount, modiAccount, join1, join2, main
 from django.contrib.auth import views as auth_views
+from main import views
 
 
 
@@ -52,9 +53,13 @@ urlpatterns = [
     # 로그인-로그아웃
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+<<<<<<< HEAD
 
     # 127.0.0.1:8000/main/...
     re_path(r'^main/', main, name='main'),
+=======
+    path('home/', views.home, name='home'),
+>>>>>>> 4972bc2a657cf36a772b83d70b2596702a49ad6c
 ]
 # 정규 표현식
 # [0-9] : 정수값 0 ~ 9 까지 패턴
