@@ -6,7 +6,8 @@ from random import random
 from django.contrib.auth import logout
 from myweb.models import Profile
 
-
+def main(request):
+    return render(request, 'main/index.html')
 
 def mainIndex(request):
     data = {
@@ -48,10 +49,18 @@ def join1(request):
             if request.POST.get('password') == request.POST.get('chkpw'):
                 # 계정 생성
                 user = User.objects.create_user(
-                username=request.POST["username"],
-                password=request.POST["chkpw"])
-                nickname = request.POST["nickname"]
-                profile = Profile(user=user, nickname=nickname)
+                    username=request.POST["username"],
+                    password=request.POST["chkpw"])
+                #회원가입 받아오기
+                name = request.POST["name"]
+                job = request.POST["job"]
+                address = request.POST["address"]
+                email = request.POST["email"]
+                phone_num = request.POST["phone_num"]
+                gender = request.POST["gender"]
+                date_of_birth = request.POST["date_of_birth"]
+                
+                profile = Profile(user=user, name=name, job=job, address=address, email=email, phone_num=phone_num, gender=gender, date_of_birth=date_of_birth)
                 profile.save()
                
                 return redirect('login')
@@ -79,30 +88,35 @@ def join2(request):
             # 동일한 계정이 있음을 알려줌
             data = {
                 'username_info': True,
-                'job':request.POST.get('employer'),
                 'first_name': request.POST.get('first_name'),
                 'last_name': request.POST.get('last_name'),
                 'email': request.POST.get('email'),
-                
             }
             return render(request, 'registration/register.html', data)
         else:
             # 2개의 패스워드가 일치하는지 체크
             if request.POST.get('password') == request.POST.get('chkpw'):
                 # 계정 생성
-                user = User()
-                user.job= request.POST.get('employer')
-                user.username = request.POST.get('username')
-                user.set_password(request.POST.get('password'))
-                user.first_name = request.POST.get('first_name')
-                user.last_name = request.POST.get('last_name')
-                user.email = request.POST.get('email')
-                user.save()
-
+                user = User.objects.create_user(
+                    username=request.POST["username"],
+                    password=request.POST["chkpw"])
+                #회원가입 받아오기
+                name = request.POST["name"]
+                job = request.POST["job"]
+                address = request.POST["address"]
+                email = request.POST["email"]
+                phone_num = request.POST["phone_num"]
+                
+                
+                company=request.POST['company']
+                profile = Profile(user=user, name=name, job=job, address=address, email=email, phone_num=phone_num, company=company)
+                profile.save()
+               
                 return redirect('login')
             else:
                 data = {
                     'password_info': True,
+                    'job': request.POST.get('employee'),
                     'username': request.POST.get('username'),
                     'first_name': request.POST.get('first_name'),
                     'last_name': request.POST.get('last_name'),
@@ -112,6 +126,54 @@ def join2(request):
 
 
 def modiAccount(request):
+    # 회원 정보 수정
+    if request.method == 'GET':
+        user = User.objects.get(username=request.user.username)
+        data = {
+            'action': reverse('modi_account'),
+            'username': user.username,
+            'first_name': user.first_name,
+            'last_name': user.last_name,
+            'email': user.email,
+            'type':'수정'
+        }
+        return render(request, 'registration/register.html', data)
+    elif request.method == 'POST':
+        user = User.objects.get(username=request.user.username)
+        user.username = request.POST.get('username')
+        user.set_password(request.POST.get('password'))
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.email = request.POST.get('email')
+        user.save()
+
+        return redirect('login')
+
+def modiUser(request):
+    # 회원 정보 수정
+    if request.method == 'GET':
+        user = User.objects.get(username=request.user.username)
+        data = {
+            'action': reverse('modi_account'),
+            'username': user.username,
+            'first_name': user.first_name,
+            'last_name': user.last_name,
+            'email': user.email,
+            'type':'수정'
+        }
+        return render(request, 'registration/register.html', data)
+    elif request.method == 'POST':
+        user = User.objects.get(username=request.user.username)
+        user.username = request.POST.get('username')
+        user.set_password(request.POST.get('password'))
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.email = request.POST.get('email')
+        user.save()
+
+        return redirect('login')
+
+def modiCompany(request):
     # 회원 정보 수정
     if request.method == 'GET':
         user = User.objects.get(username=request.user.username)

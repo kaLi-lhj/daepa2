@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.urls import include, re_path, path
 from django.contrib import admin
-from myweb.views import mainIndex, regAccount, modiAccount, join1, join2
+from myweb.views import mainIndex, regAccount, modiAccount, join1, join2, main
 from django.contrib.auth import views as auth_views
+
 
 
 urlpatterns = [
@@ -48,8 +49,12 @@ urlpatterns = [
     # /error/
     re_path(r'^error/', include(r'error.urls')),
     
+    # 로그인-로그아웃
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+
+    # 127.0.0.1:8000/main/...
+    re_path(r'^main/', main, name='main'),
 ]
 # 정규 표현식
 # [0-9] : 정수값 0 ~ 9 까지 패턴
