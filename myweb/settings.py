@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myweb', 'board', 'news', 'webtoon', 'dict', 'error', 'main',
+    'myweb', 'board', 'news', 'webtoon', 'dict', 'error', 'main', 'modi'
 ]
 
 MIDDLEWARE = [
@@ -125,6 +125,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_URL = '/account/login/'
 LOGOUT_URL = '/account/logout/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/main/'
 
 SESSION_SAVE_EVERY_REQUEST = True

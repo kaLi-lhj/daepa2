@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import include, re_path, path
 from django.contrib import admin
-from myweb.views import mainIndex, regAccount, modiAccount, join1, join2, main
+from myweb.views import mainIndex, regAccount, modiAccount, join1, join2, main, modi
 from django.contrib.auth import views as auth_views
 
 
@@ -48,6 +48,9 @@ urlpatterns = [
 
     # /error/
     re_path(r'^error/', include(r'error.urls')),
+
+    # 127.0.0.1:8000/modi/...
+    re_path(r'^modi/', modi, name='modi'),
     
     # 로그인-로그아웃
     path('login/', auth_views.LoginView.as_view(), name='login'),

@@ -1,0 +1,123 @@
+<html lang="ko">
+
+<head>
+    <link type="text/css" href="/static/bs/css/common.css" rel="stylesheet">
+    <link type="text/css" href="/static/bs/css/main.common.css" rel="stylesheet">
+    <link type="text/css" href="/static/bs/css/main.register.css" rel="stylesheet">
+</head>
+<div id="container">
+    <div class="row text-center pad-top ">
+        <div class="col-md-12">
+            <h2>회원 {{ type }}</h2>
+        </div>
+    </div>
+
+    <div class="row pad-top">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <form id="register" action="{{ action }}" method="POST">{% csrf_token %}<br />
+                        {% if user.profile.job == "employee" %}
+                        <input type="text" name="job" maxlength="20" class="text" autocomplete="off" value="employee"
+                            hidden>
+                        <span class="description"></span>
+                        {%else%}
+                        <input type="text" name="job" maxlength="20" class="text" autocomplete="off" value="employer"
+                            hidden>
+                        <span class="description"></span>
+                        {%endif%}
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>ID</h3>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="text" name="username" maxlength="20" class="text" autocomplete="off"
+                                value="{{ username }}" text="{{ user.profile.username }}" readonly>
+                            <span class="description"></span>
+                        </p>
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>이름</h3>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="text" name="name" maxlength="20" class="text" autocomplete="off"
+                                value="{{ name }}" text="{{user.profile.name}}">
+                            <span class="description"></span>
+                        </p>
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>이메일</h3>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="text" name="email" maxlength="20" class="text" autocomplete="off"
+                                value="{{ email }}" text="{{user.profile.email}}">
+                            <span class="description"></span>
+                        </p>
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>주소</h3>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="text" name="address" maxlength="20" class="text" autocomplete="off"
+                                value="{{ address }}" text="{{user.profile.address}}">
+                            <span class="description"></span>
+                        </p>
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>전화번호</h3>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="text" name="phone_num" maxlength="20" class="text" autocomplete="off"
+                                value="{{ phone_num }}" text="{{user.profile.phone_num}}">
+                            <span class="description"></span>
+                        </p>
+                        {% if user.profile.job == "employee" %}
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>성별</h3>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="gender" name="gender" maxlength="20" class="text" autocomplete="off"
+                                value="{{ gender }}" text="{{user.profile.gender}}">
+                            <span class="description"></span>
+                        </p>
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>생년월일</h3>
+                                <h4>(YYYY-MM-DD형태로 입력하세요.)</h4>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="text" name="date_of_birth" maxlength="20" class="text" autocomplete="off"
+                                value="{{ date_of_birth }}" text="{{user.profile.date_of_birth}}">
+                            <span class="description"></span>
+                        </p>
+
+                        {% else %}
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>기업/기관명</h3>
+                            </div>
+                        </div>
+                        <p>
+                            <input type="text" name="company" maxlength="20" class="text" autocomplete="off"
+                                value="{{ company }}" text="{{user.profile.company}}">
+                            <span class="description"></span>
+                        </p>
+                        {% endif %}
+
+                        <p class="submit" style="display: block;"><input type="submit" value="정보수정" class="text"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

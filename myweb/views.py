@@ -124,7 +124,6 @@ def join2(request):
                 }
                 return render(request, 'registration/join2.html', data)
 
-
 def modiAccount(request):
     # 회원 정보 수정
     if request.method == 'GET':
@@ -135,7 +134,7 @@ def modiAccount(request):
             'first_name': user.first_name,
             'last_name': user.last_name,
             'email': user.email,
-            'type':'수정'
+            'type':'정보 수정'
         }
         return render(request, 'registration/register.html', data)
     elif request.method == 'POST':
@@ -149,53 +148,41 @@ def modiAccount(request):
 
         return redirect('login')
 
-def modiUser(request):
+def modi(request):
     # 회원 정보 수정
     if request.method == 'GET':
         user = User.objects.get(username=request.user.username)
         data = {
-            'action': reverse('modi_account'),
+            'action': reverse('modi'),
             'username': user.username,
-            'first_name': user.first_name,
-            'last_name': user.last_name,
-            'email': user.email,
-            'type':'수정'
+            'name': user.profile.name,
+            'job' : user.profile.job,
+            'address' : user.profile.address,
+            'email': user.profile.email,
+            'phone_num' : user.profile.phone_num,
+            'gender' : user.profile.gender,
+            'date_of_birth' : user.profile.date_of_birth,
+            'company' : user.profile.company,
         }
-        return render(request, 'registration/register.html', data)
+        return render(request, 'modi/index.html', data)
     elif request.method == 'POST':
         user = User.objects.get(username=request.user.username)
-        user.username = request.POST.get('username')
-        user.set_password(request.POST.get('password'))
-        user.first_name = request.POST.get('first_name')
-        user.last_name = request.POST.get('last_name')
-        user.email = request.POST.get('email')
-        user.save()
+        user.profile.name = request.POST["name"]
+        user.profile.job = request.POST["job"]
+        user.profile.address = request.POST["address"]
+        user.profile.email = request.POST["email"]
+        user.profile.phone_num = request.POST["phone_num"]
+        
+        if user.profile.job == "employee":
+            user.profile.gender = request.POST["gender"]
+            user.profile.date_of_birth = request.POST["date_of_birth"]
+        else:
+            user.profile.company = request.POST["company"]
+        
+        user.profile.save()
+        
+        return redirect('main')
 
-        return redirect('login')
-
-def modiCompany(request):
-    # 회원 정보 수정
-    if request.method == 'GET':
-        user = User.objects.get(username=request.user.username)
-        data = {
-            'action': reverse('modi_account'),
-            'username': user.username,
-            'first_name': user.first_name,
-            'last_name': user.last_name,
-            'email': user.email,
-            'type':'수정'
-        }
-        return render(request, 'registration/register.html', data)
-    elif request.method == 'POST':
-        user = User.objects.get(username=request.user.username)
-        user.username = request.POST.get('username')
-        user.set_password(request.POST.get('password'))
-        user.first_name = request.POST.get('first_name')
-        user.last_name = request.POST.get('last_name')
-        user.email = request.POST.get('email')
-        user.save()
-
-        return redirect('login')
 
 
 
