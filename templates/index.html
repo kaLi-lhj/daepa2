@@ -1,8 +1,10 @@
 {% load static %}
-<html lang="ko"><head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <!-- ctrl+k+c : 다중주석
     ctrl+k+u : 다중주석해제 -->
     <title>대파(대학생 파트타임)</title>
@@ -12,17 +14,21 @@
     <meta property="og:image" content="https://www.lifeplus.co.kr/_resource/_web/images/sns_img10.jpg">
     <meta property="og:description" content="새로워진 한화금융의 LIFEPLUS"> -->
     <!-- <meta name="description" content="새로워진 한화금융의 LIFEPLUS"> -->
-    
+
     <!-- 파비콘 16x16-->
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.lifeplus.co.kr/_resource/_web/images/favicon4.ico?1">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://www.lifeplus.co.kr/_resource/_web/images/favicon4.ico?1">
     <link rel="stylesheet" type="text/css" href="https://www.lifeplus.co.kr/_resource/_web/css/common.css">
-    <script src="https://connect.facebook.net/signals/config/253252985080421?v=2.9.1&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.lifeplus.co.kr/_resource/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="https://connect.facebook.net/signals/config/253252985080421?v=2.9.1&amp;r=stable" async=""></script>
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script src="https://www.lifeplus.co.kr/_resource/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="https://www.lifeplus.co.kr/_resource/js/vendor/TweenMax.min.js"></script>
     <script src="https://www.lifeplus.co.kr/_resource/_web/js/common.js"></script>
-    <script src="https://www.lifeplus.co.kr/_resource/js/common.js"></script>		
-    
-    
-    
+    <script src="https://www.lifeplus.co.kr/_resource/js/common.js"></script>
+
+
+
     <!-- Facebook Pixel Code -->
     <!-- <script>
         if(location.href.indexOf('lifeplus.co.kr') >= 1){
@@ -42,37 +48,38 @@
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=253252985080421&ev=PageView&noscript=1"/>
     </noscript> -->
     <!-- End Facebook Pixel Code -->
-    
-        <link rel="stylesheet" type="text/css" href="https://www.lifeplus.co.kr/_resource/_web/css/main.css">
-        <script src="https://www.lifeplus.co.kr/_resource/js/vendor/jquery.easeScroll.js"></script>
-        <script>
-            var rootDomain			= "#";
-            var resourceDomain		= "#";
-        </script>
-    </head>
-    <body>
-    
+
+    <link rel="stylesheet" type="text/css" href="https://www.lifeplus.co.kr/_resource/_web/css/main.css">
+    <script src="https://www.lifeplus.co.kr/_resource/js/vendor/jquery.easeScroll.js"></script>
+    <script>
+        var rootDomain = "#";
+        var resourceDomain = "#";
+    </script>
+</head>
+
+<body>
+
     <div id="header">
         <div class="navi" style="top: 0px;">
-            
+
             <!--서브 바-->
             <!-- <div class="sub_link_bg">
                 <h1>
                     <a href="" class="btn_logo" onclick="eventTrack('');" title="대파"><span class="ir_text">대 파</span></a>
                 </h1> -->
-                
-                
-               
-                <!-- 메인페이지 NAV BAR로 넣을 것임-->
-                <ul class="nav_top">
-                    
-                    <div style="float:left; text-align:left; ">
-                        <h1>
-                            <img src="/static/bs/images/logo1.png" style="width: 10%; height:72%;"><span class="ir_text">
-                        </h1>
-                    </div>
-                    
-                    <!-- <li class="sub">
+
+
+
+            <!-- 메인페이지 NAV BAR로 넣을 것임-->
+            <ul class="nav_top">
+
+                <div style="float:left; text-align:left; ">
+                    <h1>
+                        <img src="/static/bs/images/logo1.png" style="width: 10%; height:72%;"><span class="ir_text">
+                    </h1>
+                </div>
+
+                <!-- <li class="sub">
                         <a href="https://www.lifeplus.co.kr/about" class="mot2" onclick="eventTrack('lifeplus2019_gnb_about');"><span class="en">ABOUT</span></a>
                         <div class="sub_link sub_link_about" style="width: 621px;">
                             <a href="https://www.lifeplus.co.kr/about" onclick="eventTrack('lifeplus2019_gnb_about');" class="sub_a mot2"><span>ABOUT LIFEPLUS</span></a>
@@ -103,45 +110,56 @@
                     
                     <li><a href="https://www.lifeplus.co.kr/ambassador" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_ambassador');"><span>AMBASSADOR</span></a></li>
                     <li><a href="https://www.lifeplus.co.kr/notification" class="mot2" onclick="eventTrack('lifeplus2019_gnb_notification');"><span>NOTIFICATION</span></a></li> -->
-                    
-                    <div style="float:right;">
-                        {% if user.is_authenticated %}
-                        <li>
-                            <a href="#"><h2>{{ user.profile.name }}님 환영합니다.</h2></a>
-                        </li>
-                        <li>
-                            <a href="{% url 'modi' %}"><h2>정보수정</h2></a>
-                        </li>
-                        <li>
-                            <a href="{% url 'logout' %}"><h2>로그아웃</h2></a>
-                        </li>
-                        {% else %}
-                        <li>
-                            <a href="{% url 'reg_account' %}"><h2>회원가입</h2></a>
-                        </li>
-                        <li>
-                            <a href="{% url 'login' %}"><h2>로그인</h2></a>
-                        </li>
-                        {% endif %}
-                    </div>
-                    
-                </ul>
-            
-            
-           
-            
+
+                <div style="float:right;">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="#">
+                            <h2>{{ user.profile.name }}님 환영합니다.</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'modi' %}">
+                            <h2>정보수정</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">
+                            <h2>로그아웃</h2>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'reg_account' %}">
+                            <h2>회원가입</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}">
+                            <h2>로그인</h2>
+                        </a>
+                    </li>
+                    {% endif %}
+                </div>
+
+            </ul>
+
+
+
+
         </div>
         <div class="header_bg"></div>
         <div class="header_pop">
             <a href="javascript:void(0);" class="btn_header_close">
-                <img src="https://www.lifeplus.co.kr/_resource/_web/images/promotion/lifeplusx/btn_pop_close_black.png" alt="">
+                <img src="https://www.lifeplus.co.kr/_resource/_web/images/promotion/lifeplusx/btn_pop_close_black.png"
+                    alt="">
             </a>
             <img src="https://www.lifeplus.co.kr/_resource/_web/images/common/comingsoon.jpg" alt="">
         </div>
     </div>
-    
+
     <script>
-        $('.nowMove').click(function(){
+        $('.nowMove').click(function () {
             localStorage.removeItem('search');
             localStorage.removeItem('sTop');
             localStorage.removeItem('page');
@@ -150,164 +168,135 @@
             localStorage.removeItem('back');
         });
     </script>
-    
+
     <div id="wrap" class="main_wrap">
-       <div class="wrap_inner" style="transform: matrix(1, 0, 0, 1, 0, 0);">
-                
-          <div class="section">
-             <article>
-                 <br><br><br><br><br><br><br><br><br><br><br><br>
-                 <br><br><br><br><br><br><br><br><br><br><br><br>
-                 <br>
-             <div class="sec_inner sec_type1">
-                <div class="img_box left">
-                   <div class="img_area">
-                      <div class="img_inner main_img_link">
-                         <a href="#">
-                                    <!-- 첫번째이미지-->
-                            <img src="/static/bs/images/main.png" alt="" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); width: 200%; height: 100%;">
-                                </a>
-                                
-                                <div class="btn_cursor" style="transform: translate3d(516.5px, 0px, 0px);">
-                                    <!-- 커서이미지-->
-                            <div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
-                         </div>
-                      </div>
-                      <div class="img_bg top" style="transform: translate(0%, -100%) matrix(1, 0, 0, 1, 0, 0);"></div>
-                      <div class="img_bg left" style="width: 0px;"></div>
-                   </div>
-                </div>
-                <div class="copy_box right" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                    <div class="copy_num enMP">01</div>
-                    <div class="copy_area">
-                            <div class="copy_title">
-                                    <br>CHOOSE FIT 
-                            </div>
-                    <div class="copy_sub_txt" style="opacity: 1;">나에게 딱맞는 대학생을 뽑습니다.</div>
-                    <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                    <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>     
-                    </div>
-                </div>
-            </article>
-            </div>
-          <div class="section ">
-              <article>
-                    <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="wrap_inner" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+
+            <div class="section">
+                <article>
                     <br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br>
-                    
-             <div class="sec_inner sec_type2">
-                <div class="img_box right">
-                   <div class="img_area">
-                      
-                         <a href="#">
-                            <img src="https://cafeptthumb-phinf.pstatic.net/MjAxOTA3MjdfMjUy/MDAxNTY0MTk3OTI5ODU1.-RT7NjsaAN93OLe7PT3jWa36WpUvBU232h_LPqx6zPYg.6TPOvUzZ7xbxQt6yZt2nFOONAssP7uuDyEVgLhKuF8Ug.JPEG/main2.jpg?type=w740" alt="" style="transform: matrix(1, 0, 0, 1, 0, 0); max-width: 900px; height: 700px;">
-                         </a>
-                         <div class="btn_cursor" style="transform: translate3d(635.5px, 172px, 0px);">
-                            <div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
-                         </div>
-                      
-                      <div class="img_bg right" style="width: 0px;"></div>
-                   </div>
-                </div>
-                <div class="copy_box left" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                   <div class="copy_num enMP">02</div>
-                   <div class="copy_area">
-                                <div class="copy_title">
-                                        <br>DO YOU WANT  
+                    <div class="sec_inner sec_type1">
+                        <div class="img_box left">
+                            <div class="img_area">
+                                <div class="img_inner main_img_link">
+                                    <a href="#">
+                                        <!-- 첫번째이미지-->
+                                        <img src="/static/bs/images/main.png" alt
+                                            style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); width: 200%; height: 100%;">
+                                    </a>
+
+                                    <div class="btn_cursor" style="transform: translate3d(516.5px, 0px, 0px);">
+                                        <!-- 커서이미지-->
+                                        <div class="btn_view_more"><img
+                                                src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png"
+                                                alt></div>
+                                    </div>
                                 </div>
-                      <div class="copy_sub_txt" style="opacity: 1;">하고싶은 일을 하세요</div>
-                      <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                      <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div> 
-                   </div>
-                </div>
-             </div>
-            </article>
-          </div>
-          <div class="section ">
-              <article>
-                    <br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br>
-             <div class="sec_inner sec_type3">
-                <div class="img_box left">
-                   <div class="img_area">
-                      <div class="img_inner main_img_link">
-                         <a href="#">
-                            <img src="https://www.lifeplus.co.kr/_resource/_web/images/main/main_kv3.jpg" alt="" style="transform: matrix(1, 0, 0, 1, 0, 0);">
-                         </a>
-                         <div class="btn_cursor">
-                            <div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
-                         </div>
-                      </div>
-                      <div class="img_bg left" style="width: 0px;"></div>
-                   </div>
-                </div>
-                <div class="copy_box right" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                   <div class="copy_num enMP">03</div>
-                   <div class="copy_area">
-                        <div class="copy_title">
-                                <br>JOIN TO US  
+                                <div class="img_bg top"
+                                    style="transform: translate(0%, -100%) matrix(1, 0, 0, 1, 0, 0);"></div>
+                                <div class="img_bg left" style="width: 0px;"></div>
+                            </div>
                         </div>
-                        <div class="copy_sub_txt" style="opacity: 1;">대파에 참여하세요.</div>
-                        <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                        <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
-                   </div>
-                </div>
-             </div>
-             </article>
-          </div>
-          <div class="section ">
-              <article>
+                        <div class="copy_box right" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            <div class="copy_num enMP">01</div>
+                            <div class="copy_area">
+                                <div class="copy_title">
+                                    <br>CHOOSE FIT
+                                </div>
+                                <div class="copy_sub_txt" style="opacity: 1;">나에게 딱맞는 대학생을 뽑습니다.</div>
+                                <!-- 밑에 링크 로그인 창으로 바꾸기-->
+                                <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
+                            </div>
+                        </div>
+                    </article>
+            </div>
+            <div class="section ">
+                <article>
+                    <br><br><br><br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                    <div class="sec_inner sec_type2">
+                        <div class="img_box right">
+                            <div class="img_area">
+
+                                <a href="#">
+                                    <img src="/static/bs/images/main.png"
+                                        alt=""
+                                        style="transform: matrix(1, 0, 0, 1, 0, 0); max-width: 900px; height: 700px;">
+                                </a>
+                                <div class="btn_cursor" style="transform: translate3d(635.5px, 172px, 0px);">
+                                    <div class="btn_view_more"><img
+                                            src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png"
+                                            alt=""></div>
+                                </div>
+
+                                <div class="img_bg right" style="width: 0px;"></div>
+                            </div>
+                        </div>
+                        <div class="copy_box left" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            <div class="copy_num enMP">02</div>
+                            <div class="copy_area">
+                                <div class="copy_title">
+                                    <br>DO YOU WANT
+                                </div>
+                                <div class="copy_sub_txt" style="opacity: 1;">하고싶은 일을 하세요</div>
+                                <!-- 밑에 링크 로그인 창으로 바꾸기-->
+                                <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="section ">
+                <article>
                     <br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br>
-             <div class="sec_inner sec_type4">
-                <div class="img_box right">
-                   <div class="img_area">
-                      <div class="img_inner main_img_link">
-                         <a href="#">
-                            <img src="https://www.lifeplus.co.kr/_resource/_web/images/main/main_kv4.jpg" alt="">
-                         </a>
-                         <div class="btn_cursor" style="transform: translate3d(703.5px, 173px, 0px);">
-                            <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                            <div class="btn_view_more"><img src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png" alt=""></div>
-                         </div>
-                      </div>
-                      <div class="img_bg right" style="width: 100%;"></div>
-                   </div>
-                </div>
-                <div class="copy_box left" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, 100);">
-                   <div class="copy_num enMP">04</div>
-                   <div class="copy_area">
-                        <div class="copy_title">
-                                <br>BEST MATHCING SYSTEM 
-                        </div><div class="copy_sub_txt" style="opacity: 0;">대파가 추구하는 매칭 시스템</div>
-                        <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                        <div class="btn_more" style="opacity: 0;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
-                   </div>
-                </div>
-             </div>
-          </div>
-          
-        </article>
-       </div>
-       <div class="section_paging left">
-          <div class="paging_txt now">1</div>
-          <div class="paging_box">
-             <div class="move_paging" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-          </div>
-          <div class="paging_txt total">4</div>
-       </div>
+                    <br><br><br><br><br><br>
+                    <div class="sec_inner sec_type3">
+                        <div class="img_box left">
+                            <div class="img_area">
+                                <div class="img_inner main_img_link">
+                                    <a href="#">
+                                        <img src="/static/bs/images/main.png"
+                                            alt="" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                                    </a>
+                                    <div class="btn_cursor">
+                                        <div class="btn_view_more"><img
+                                                src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png"
+                                                alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="img_bg left" style="width: 0px;"></div>
+                            </div>
+                        </div>
+                        <div class="copy_box right" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            <div class="copy_num enMP">03</div>
+                            <div class="copy_area">
+                                <div class="copy_title">
+                                    <br>JOIN TO US
+                                </div>
+                                <div class="copy_sub_txt" style="opacity: 1;">대파에 참여하세요.</div>
+                                <!-- 밑에 링크 로그인 창으로 바꾸기-->
+                                <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+        
+        
     </div>
 
-    
-    
+
+
     <script src="https://www.lifeplus.co.kr/app/blog/sp4/web/js/newsLetter.js" charset="UTF-8"></script>
-    
-    
-    
-        <script src="https://www.lifeplus.co.kr/_resource/_web/js/main.js"></script>
-    
-    </body>
+
+
+
+    <script src="https://www.lifeplus.co.kr/_resource/_web/js/main.js"></script>
+
+</body>
+
 </html>
