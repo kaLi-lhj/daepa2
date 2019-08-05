@@ -43,8 +43,8 @@ urlpatterns = [
     # 127.0.0.1:8000/webtoon/...
     re_path(r'^webtoon/', include(r'webtoon.urls')),
 
-    # 127.0.0.1:8000/dict/...
-    re_path(r'^dict/', include(r'dict.urls')),
+    # 127.0.0.1:8000/gonggo/...
+    re_path(r'^gonggo/', include(r'gonggo.urls')),
 
     # /error/
     re_path(r'^error/', include(r'error.urls')),

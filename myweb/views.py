@@ -15,7 +15,7 @@ def mainIndex(request):
             random()*10:('게시판', reverse('board:index')),
             random()*20:('뉴스', reverse('news:index')),
             random()*30:('웹툰', reverse('webtoon:index')),
-            random()*40:('사전', reverse('dict:index')),
+            random()*40:('공고', reverse('gonggo:index')),
             
         }
     }
