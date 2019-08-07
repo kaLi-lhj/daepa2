@@ -1,123 +1,163 @@
-<html lang="ko"><head>
-        <link type="text/css" href="/static/bs/css/common.css" rel="stylesheet">
-        <link type="text/css" href="/static/bs/css/main.common.css" rel="stylesheet">
-        <link type="text/css" href="/static/bs/css/main.register.css" rel="stylesheet">
-    </head>
-    <div id="container">
+<html lang="ko">
+
+<head>
+    <link type="text/css" href="/static/bs/css/common.css" rel="stylesheet">
+    <link type="text/css" href="/static/bs/css/main.common.css" rel="stylesheet">
+    <link type="text/css" href="/static/bs/css/main.register.css" rel="stylesheet">
+</head>
+<div id="container">
     <div class="row text-center pad-top ">
         <div class="col-md-12">
             <h2>회원가입</h2>
         </div>
     </div>
-    
+
     <div class="row pad-top">
         <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"> 
+                <div class="panel-heading">
                 </div>
                 <div class="panel-body">
-                    <form id="register" action="{{ action }}" method="POST">{% csrf_token %}<br/> 
-                        
-                            <input type="text" name="job" maxlength="20" class="text"  autocomplete="off" value="employee" hidden>
-                            <span class="description"></span>
-                            <div class="row text-center pad-top ">
-                                    <div class="col-md-12">
-                                        <h3>ID</h3>
-                                    </div>
-                                </div>
+                    <form id="register" action="{{ action }}" method="POST">{% csrf_token %}<br />
+
+                        <input type="text" name="job" maxlength="20" class="text" autocomplete="off" value="employee"
+                            hidden>
+                        <span class="description"></span>
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h3>ID</h3>
+                            </div>
+                        </div>
                         <p>
-                            <input type="text" name="username" maxlength="20" class="text"  autocomplete="off" value="{{ username }}">
+                            <input type="text" name="username" maxlength="20" class="text" autocomplete="off"
+                                value="{{ username }}">
                             <span class="description"></span>
                         </p>
                         {% if username_info %}<h6 class="alert alert-danger">이미존재하는 아이디입니다.</h6>{% endif %}
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>Password</h3>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>Password</h3>
                             </div>
+                        </div>
                         <p>
                             <input type="password" name="password" maxlength="20" class="text" autocomplete="off">
                             <span class="description"></span>
                         </p>
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>Password 확인</h3>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>Password 확인</h3>
                             </div>
+                        </div>
                         <p>
                             <input type="password" name="chkpw" maxlength="20" class="text" autocomplete="off">
                             <span class="description"></span>
                         </p>
-                        
+
                         {% if password_info %}<h4 class="alert alert-danger">잘못된 패스워드 입력</h4>{% endif %}
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>이름</h3>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>이름</h3>
                             </div>
+                        </div>
                         <p>
-                            <input type="text" name="name" maxlength="20" class="text" autocomplete="off" value="{{ name }}">
+                            <input type="text" name="name" maxlength="20" class="text" autocomplete="off"
+                                value="{{ name }}">
                             <span class="description"></span>
                         </p>
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>이메일</h3>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>이메일</h3>
                             </div>
+                        </div>
                         <p>
-                            <input type="email" name="email" maxlength="20" class="text" autocomplete="off" value="{{ email }}">
+                            <input type="email" name="email" maxlength="20" class="text" autocomplete="off"
+                                value="{{ email }}">
                             <span class="description"></span>
                         </p>
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>주소</h3>
-                                    <h4>( 예시 : ㅇㅇ도(특별시) ㅇㅇ시 ㅇㅇ구 )</h4>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>주소</h3>
+                                <h4>( 예시 : ㅇㅇ도(특별시) ㅇㅇ시 ㅇㅇ구 )</h4>
                             </div>
+                        </div>
                         <p>
-                            <input type="text" name="address" maxlength="20" class="text" autocomplete="off" value="{{ address }}">
+                            <input type="text" name="address" maxlength="20" class="text" autocomplete="off"
+                                value="{{ address }}">
                             <span class="description"></span>
                         </p>
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>전화번호</h3>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>전화번호</h3>
                             </div>
+                        </div>
                         <p>
-                            <input type="text" name="phone_num" maxlength="20" class="text" autocomplete="off" value="{{ phone_num }}">
+                            <input type="text" name="phone_num" maxlength="20" class="text" autocomplete="off"
+                                value="{{ phone_num }}">
                             <span class="description"></span>
                         </p>
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>성별</h3>
-                                    <h4>( 남 or 여 )</h4>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>성별</h3>
+                                <h4>( 남 or 여 )</h4>
                             </div>
+                        </div>
                         <p>
-                            <input type="gender" name="gender" maxlength="20" class="text" autocomplete="off" value="{{ gender }}">
+                            <input type="gender" name="gender" maxlength="20" class="text" autocomplete="off"
+                                value="{{ gender }}">
                             <span class="description"></span>
                         </p>
                         <div class="row text-center pad-top ">
-                                <div class="col-md-12">
-                                    <h3>생년월일</h3>
-                                    <h4>( YYYY-MM-DD형태로 입력하세요. )</h4>
-                                </div>
+                            <div class="col-md-12">
+                                <h3>생년월일</h3>
+                                <h4>( YYYY-MM-DD형태로 입력하세요. )</h4>
                             </div>
+                        </div>
                         <p>
-                            <input type="date" name="date_of_birth" maxlength="20" class="text" autocomplete="off" value="{{ date_of_birth }}">
+                            <input type="date" name="date_of_birth" maxlength="20" class="text" autocomplete="off"
+                                value="{{ date_of_birth }}">
                             <span class="description"></span>
                         </p>
-                        
-                        
-                                          
-                        
+
+                        <div class="card">
+                            <h2>Radio Buttons</h2>
+                            
+                            <ul>
+                                <li>
+                                    <input type="radio" name="interest" id="1" value = "번역" />
+                                    <label for="one">Option #1</label>
+                                    
+                                    <div class="check"></div>
+                                </li>
+                                
+                                <li>
+                                    <input type="radio" name="interest" id="2" value = "연구보조"/>
+                                    <label for="two">Option #2</label>
+                                    
+                                    <div class="check"></div>
+                                </li>
+                                <li>
+                                    <input type="radio" name="interest" id="3" value = "프로그래밍"/>
+                                    <label for="two">Programming</label>
+                                    
+                                    <div class="check"></div>
+                                </li>
+                                <li>
+                                    <input type="radio" name="interest" id="4" value = "디자인"/>
+                                    <label for="two">Design</label>
+                                    
+                                    <div class="check"></div>
+                                </li>
+                            </ul>
+                        </div>
+
+
                         <p class="submit" style="display: block;"><input type="submit" value="회원가입" class="text"></p>
                         <hr />
                         이미 등록 되어 있습니까?
-                        <a href="{% url 'login' %}" >여기로 로그인</a>
+                        <a href="{% url 'login' %}">여기로 로그인</a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>

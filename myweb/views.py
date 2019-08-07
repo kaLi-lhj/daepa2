@@ -59,8 +59,9 @@ def join1(request):
                 phone_num = request.POST["phone_num"]
                 gender = request.POST["gender"]
                 date_of_birth = request.POST["date_of_birth"]
+                interest = request.POST.get("interest",'False')
                 
-                profile = Profile(user=user, name=name, job=job, address=address, email=email, phone_num=phone_num, gender=gender, date_of_birth=date_of_birth)
+                profile = Profile(user=user, name=name, job=job, address=address, email=email, phone_num=phone_num, gender=gender, date_of_birth=date_of_birth, interest = interest)
                 profile.save()
                
                 return redirect('login')
@@ -163,6 +164,7 @@ def modi(request):
             'gender' : user.profile.gender,
             'date_of_birth' : user.profile.date_of_birth,
             'company' : user.profile.company,
+            'interest' : user.profile.interest
         }
         return render(request, 'modi/index.html', data)
     elif request.method == 'POST':
@@ -176,6 +178,7 @@ def modi(request):
         if user.profile.job == "employee":
             user.profile.gender = request.POST["gender"]
             user.profile.date_of_birth = request.POST["date_of_birth"]
+            user.profile.interest = request.POST["interest"]
         else:
             user.profile.company = request.POST["company"]
         
