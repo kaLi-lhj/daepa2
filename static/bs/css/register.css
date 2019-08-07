@@ -8,8 +8,8 @@ span {
     font-family: NanumGothic;
  }
 .btn_group button {
-    border: 1px solid seagreen;
-    background-color: salmon;
+    border: 1px solid #ED3847;
+    background-color: #ED3847;
     color: white;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -21,7 +21,7 @@ span {
     font-family: NanumGothic;
 }
 .vl {
-    border-left: 6px solid rgb(246, 246, 246);
+    border-left: 6px solid #ED3847;
     height: 45%;
     position: absolute;
     left: 50%;
