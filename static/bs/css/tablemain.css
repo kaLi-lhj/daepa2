@@ -202,8 +202,9 @@
   }
   
   .row .cell:nth-child(1) {
-    width: 360px;
-    padding-left: 40px;
+    width: 50px;
+    
+    text-align: center;
   }
   
   .row .cell:nth-child(2) {

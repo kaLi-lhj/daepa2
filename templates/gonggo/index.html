@@ -15,7 +15,7 @@
             <th class="col-md-2 text-center">채용제목</th>
             <th class="col-md-6 text-center">모집직종</th>
             <th class="col-md-2 text-center">근무예정지</th>
-            <th class="col-md-1 text-center">핸드폰번호</th>
+            
         </tr>
         {% for item in gonggo %}
             <tr>
@@ -23,7 +23,7 @@
                 <td class="col-md-2 text-center">{{ item.title }}</td>
                 <td class="col-md-6"><a href="{% url 'gonggo:detail' item.id %}">{{ item.interest }}</a></td>
                 <td class="col-md-2 text-center">{{ item.workDetail }}</td>
-                <td class="col-md-1 text-center">{{ item.phonenum }}</td>
+                
             </tr>
         {% endfor %}
     </table>
