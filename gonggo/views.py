@@ -6,7 +6,7 @@ from gonggo.models import Gonggo
 # Create your views here.
 def mainIndex(request):
     # data = Gonggo.objects.get(id=1)
-    data = Gonggo.objects.all()
+    data = Gonggo.objects.all().order_by('id')
 
     return render(request, 'gonggo/index.html',{"gonggo":data})
 

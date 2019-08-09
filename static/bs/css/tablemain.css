@@ -254,8 +254,32 @@ iframe {
     line-height: 1.2;
     font-weight: unset !important;
   }
+<<<<<<< HEAD
 
   .table, .row, .cell {
+=======
+  
+  .row .cell:nth-child(1) {
+    width: 50px;
+    
+    text-align: center;
+  }
+  
+  .row .cell:nth-child(2) {
+    width: 160px;
+  }
+  
+  .row .cell:nth-child(3) {
+    width: 250px;
+  }
+  
+  .row .cell:nth-child(4) {
+    width: 190px;
+  }
+  
+  
+  .table, .row {
+>>>>>>> b49b8a9dfbb29a19362df8a4d7aa10cb9fdc028e
     width: 100% !important;
   }
 }
