@@ -12,6 +12,7 @@ class Gonggo(models.Model):
     )
     interest=models.CharField(max_length=2, choices=INTEREST_CHOICES,default="a")
     workDetail=models.TextField(max_length=100,default="a")
+    person=models.CharField(max_length=2, default="a")
     serviceAddr2=models.CharField(max_length=100,default="a")
     salary=models.CharField(max_length=100,default="a")
     minMoney=models.CharField(max_length=100,default="a")
@@ -20,3 +21,6 @@ class Gonggo(models.Model):
     manager1=models.CharField(max_length=100,default="a")
     phonenum=models.CharField(max_length=20,default="a")
     email=models.CharField(max_length=30,default="a")
+
+
+

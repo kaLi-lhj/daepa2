@@ -1,11 +1,10 @@
+
 <html lang="ko">
 
-<head>
-
-</head>
-
 <body>
-    <form action="{% url 'gonggo:index' %}" method="POST">{% csrf_token %}
+    
+
+    <form action="{% url 'gonggo:add' %}" method="POST">{% csrf_token %}
         <div id="contents">
 
 
@@ -22,8 +21,9 @@
                     <span class="tp_icon circle bsn">
                         <span class="tp_icon icon mypage_img_01 bsn"></span>
                     </span>
+                    
                     <div style="text-align: center;">
-                        <h1>[ 공고등록 ]</h1>
+                        <h1>[ 공고등록 ]</h1><br><br><br><br>
                     </div>
                     <div class="txtwrap">
 
@@ -120,7 +120,13 @@
                                         </td>
                                         
 
-                                        
+                                        <tr>
+                                            <th scope="row"><label for="hireCount">모집인원 <span
+                                                        class="fc_red">*</span></label></th>
+                                            <td class="item"><input name="hireCount" type="text" value="{{ gonggo.person }}" id="hireCount"
+                                                    title="모집인원" class="width40p" required="" onkeyup="onlyNumber(this);"
+                                                    maxlength="4"> 명</td>
+                                        </tr>
                                         
                                         <tr>
                                             <th scope="row"><br>근무예정지 <span class="fc_red">*</span></th>
@@ -175,7 +181,7 @@
                                                         onkeyup="onlyNumber(this); num_format(this);" maxlength="13"> 원
                                                     이상 ~
                                                     <input type="text" size="10" name="highMoney" id="highMoney"
-                                                        value="{{ highMoney }}" title="최대금액" class="width100px ml3" required="required"
+                                                        value="{{ gonggo.highMoney }}" title="최대금액" class="width100px ml3" required="required"
                                                         onkeyup="onlyNumber(this); num_format(this);" maxlength="13"> 원
                                                     이하
 
@@ -218,7 +224,7 @@
                                         <tr>
                                             <th scope="row"><label for="manager1">담당자명 <span
                                                         class="fc_red">*</span></label></th>
-                                            <td><input id="manager1" required="required" name="listVO[0].manager"
+                                            <td><input id="manager1" required="required" name="manager1"
                                                     title="담당자명" class="width30p mr10" type="text" value="{{ gonggo.manager1 }}"
                                                     onkeyup="chkByte(this,20);"> (예 : 홍길동)</td>
 

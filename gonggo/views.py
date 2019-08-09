@@ -31,7 +31,7 @@ def gonggoForm(request):
         gonggo.email=request.POST.get('email')
         gonggo.save()
 
-        return redirect('gonggo:index', gonggo.id)
+        return redirect('gonggo:detail', gonggo.id)
         
 def gonggoDetail(request, idx):
     '''
@@ -75,7 +75,7 @@ def gonggoAdd(request):
         gonggo.email=request.POST['email']
         gonggo.save()
 
-        return redirect('gonggo:index', gonggo.id)
+        return redirect('gonggo:detail', gonggo.id)
         
 def gonggoUpdate(request, idx):
     if request.method == 'GET':
@@ -86,7 +86,7 @@ def gonggoUpdate(request, idx):
                 'gonggo':gonggo
             }
             return render(request, 'gonggo/form.html', data)
-        except Board.DoesNotExist:
+        except Gonggo.DoesNotExist:
             return HttpResponse('해당 페이지가 존재하지 않습니다.')
 
     elif request.method == 'POST':

@@ -1,9 +1,7 @@
 
-{% block title %}{{ board.title }}{% endblock %}
-{% block content %}
 <div class="blog-header">
     <div class="container">
-        <h1 class="blog-title">{{ board.title }}</h1>
+        <h1 class="blog-title">채용제목 : {{ gonggo.title }}</h1>
     </div>
 </div>
 <div class="blog-post">
@@ -19,7 +17,7 @@
                         <th scope="row"><label for="title"><h3>채용제목 *</h3></label></th>
                         <th>
                         <td class="item"><input name="title" type="text" id="title" title="채용제목 입력"
-                                class="width95p" required=""></td></th>
+                                class="width95p" required="" value="{{gonggo.title}}" readonly></td></th>
                     </tr>
                 </tbody>
             </table>
@@ -36,35 +34,8 @@
                         <tr>
                             <th scope="row"><label for="oneDep">모집직종 <span class="fc_red">*</span></label>
                             </th>
-                                <td>
-                                    <ul>
-                                        <li>
-                                            <input type="radio" name="interest" id="1" value = "디자인" />
-                                            <label for="one">디자인</label>
-                                            
-                                            <div class="check"></div>
-                                        </li>
-                                        
-                                        <li>
-                                            <input type="radio" name="interest" id="2" value = "번역"/>
-                                            <label for="two">번역</label>
-                                            
-                                            <div class="check"></div>
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="interest" id="3" value = "연구보조"/>
-                                            <label for="three">연구보조</label>
-                                            
-                                            <div class="check"></div>
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="interest" id="4" value = "프로그래밍"/>
-                                            <label for="four">프로그래밍</label>
-                                            
-                                            <div class="check"></div>
-                                        </li>
-                                    </ul>
-                                </td>
+                            <td class="item"><input name="interest" type="text" id="interest" title="모집직종"
+                                class="width95p" required="" value="{{gonggo.interest}}" readonly></td>
                             <td>
                             </tr>
                             <tr></tr>    
@@ -73,9 +44,9 @@
                             </td>
                             <td class="item">
                                 
-                                <textarea name="workDetail" id="workDetail" cols="50" rows="5"
-                                    class="width95p mt5" title="직무내용 입력" required=""
-                                    onkeyup="chkByte(this,800);"></textarea>
+                                <input type="text" name="workDetail" id="workDetail" cols="50" rows="5"
+                                    class="width95p mt5" title="직무내용 입력" required="" value="{{gonggo.workDetail}}"
+                                    onkeyup="chkByte(this,800);" readonly>
                             </td>
                         </tr>
                         
@@ -84,7 +55,7 @@
                         <tr>
                             <th scope="row"><label for="hireCount">모집인원 <span
                                         class="fc_red">*</span></label></th>
-                            <td class="item"><input name="hireCount" type="text" value="" id="hireCount"
+                            <td class="item"><input name="hireCount" type="text" value="{{ gonggo.person }}" id="hireCount"
                                     title="모집인원" class="width40p" required="" onkeyup="onlyNumber(this);"
                                     maxlength="4"> 명</td>
                         </tr>
@@ -94,7 +65,7 @@
                                 <div class="item">
                                    
                                     <input id="serviceAddr2" name="serviceAddr2" title="상세주소"
-                                        class="width95p mt5" type="text" value="">
+                                        class="width95p mt5" type="text" value="{{ gonggo.serviceAddr2 }}">
                                     <input name="location" id="location" type="hidden">
                                 </div>
                                 
@@ -132,10 +103,10 @@
                                         <option value="SALARY_TIME" label="시급">시급</option>
 
                                     </select>
-                                    <input type="text" size="10" name="minMoney" id="minMoney" value=""
+                                    <input type="text" size="10" name="minMoney" id="minMoney" value="{{ gonggo.minMoney }}"
                                         title="최소금액" class="width100px mr3" required="required"
                                         onkeyup="onlyNumber(this); num_format(this);" maxlength="13"> 원 이상 ~
-                                    <input type="text" size="10" name="highMoney" id="highMoney" value=""
+                                    <input type="text" size="10" name="highMoney" id="highMoney" value="{{ gonggo.highMoney }}"
                                         title="최대금액" class="width100px ml3" required="required"
                                         onkeyup="onlyNumber(this); num_format(this);" maxlength="13"> 원 이하
                                     
@@ -151,9 +122,9 @@
                             <td>
                                 
                                 <span class="db cm mt3"><br>(요일별 각각의 근무시간을 상세히 입력하셔야 합니다.)<br></span>
-                                <textarea name="workTimeDetailContent" id="workTimeDetailContent" cols="50"
-                                    rows="5" class="width95p mt5" title="직무내용 입력"
-                                    onkeyup="chkByte(this,300);"></textarea>
+                                <input type="text" name="workTimeDetailContent" id="workTimeDetailContent" cols="50"
+                                    rows="5" class="width95p mt5" title="직무내용 입력" value="{{ gonggo.workTimeDetailContent }}"
+                                    onkeyup="chkByte(this,300);">
                                 
                                
                             </td>
@@ -180,7 +151,7 @@
                                         class="fc_red">*</span></label></th>
                             <td><input id="manager1" required="required"
                                     name="listVO[0].manager" title="담당자명" class="width30p mr10" type="text"
-                                    value="" onkeyup="chkByte(this,20);"> (예 : 홍길동)</td>
+                                    value="{{ gonggo.manager1 }}" onkeyup="chkByte(this,20);"> (예 : 홍길동)</td>
                                     
                         </tr>
                         <tr>
@@ -188,7 +159,7 @@
                             <th scope="row" class="blLine">휴대전화<span class="fc_red">*</span></th>
                                     
                             <td>
-                            <input id="phonenum" name="phonenum" maxlength="15" type="text" value=""
+                            <input id="phonenum" name="phonenum" maxlength="15" type="text" value="{{ gonggo.phonenum }}"
                                 required="required">
                             </td>
                         </tr>
@@ -199,7 +170,7 @@
                                         class="fc_red">*</span></label></th>
                             <td class="item"><input id="email" name="email" title="이메일"
                                     required="required" type="email" maxlength="30"
-                                    value="">
+                                    value="{{ gonggo.email }}">
                                 
                                 
                             </td>
@@ -210,9 +181,8 @@
 </div>
 <div class="text-right">
     <div class="row btn-group">
-        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'gonggo:index' %}''">목록</button>
-        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'gonggo:update' %}''">수정</button>
-        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'gonggo:delete' %}''">삭제</button>
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'gonggo:index' %}'">목록</button>
+        
     </div>
 </div>
-{% endblock %}
+
