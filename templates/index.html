@@ -71,11 +71,11 @@
 
 
             <!-- 메인페이지 NAV BAR로 넣을 것임-->
-            <ul class="nav_top">
+            <ul class="nav_top" style="height:80px;">
 
                 <div style="float:left; text-align:left; ">
                     <h1>
-                        <img src="/static/bs/images/logo1.png" style="width: 10%; height:72%;"><span class="ir_text">
+                        <img src="/static/bs/images/logo1.png" style="width:50px; height:48px; float:left; margin-left:50px;"><span class="ir_text">
                     </h1>
                 </div>
 
@@ -111,7 +111,7 @@
                     <li><a href="https://www.lifeplus.co.kr/ambassador" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_ambassador');"><span>AMBASSADOR</span></a></li>
                     <li><a href="https://www.lifeplus.co.kr/notification" class="mot2" onclick="eventTrack('lifeplus2019_gnb_notification');"><span>NOTIFICATION</span></a></li> -->
 
-                <div style="float:right;">
+                <div style="float:right; margin-right:1%; padding:10px;">
                     {% if user.is_authenticated %}
                     <li>
                         <a href="#">
@@ -175,15 +175,15 @@
             <div class="section">
                 <article>
                     <br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br>
+                    <br><br><br><br><br>
                     <div class="sec_inner sec_type1">
                         <div class="img_box left">
                             <div class="img_area">
                                 <div class="img_inner main_img_link">
                                     <a href="#">
                                         <!-- 첫번째이미지-->
-                                        <img src="/static/bs/images/main.png" alt
-                                            style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); width: 200%; height: 100%;">
+                                        <img src="/static/bs/images/main01.png"
+                                            style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); width: 90%; height: 80%; float:top; margin-top:10%;">
                                     </a>
 
                                     <div class="btn_cursor" style="transform: translate3d(516.5px, 0px, 0px);">
@@ -206,7 +206,6 @@
                                 </div>
                                 <div class="copy_sub_txt" style="opacity: 1;">나에게 딱맞는 대학생을 뽑습니다.</div>
                                 <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                                <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
                             </div>
                         </div>
                     </article>
@@ -214,27 +213,28 @@
             <div class="section ">
                 <article>
                     <br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br>
 
                     <div class="sec_inner sec_type2">
                         <div class="img_box right">
                             <div class="img_area">
 
                                 <a href="#">
-                                    <img src="/static/bs/images/main.png"
+                                    <img src="/static/bs/images/main02.png"
                                         alt=""
-                                        style="transform: matrix(1, 0, 0, 1, 0, 0); max-width: 900px; height: 700px;">
+                                        style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); width: 100%; height: 80%; float:top; margin-top:100px;">
                                 </a>
-                                <div class="btn_cursor" style="transform: translate3d(635.5px, 172px, 0px);">
+                                <div class="btn_cursor" style="transform: translate3d(516.5px, 0px, 0px);">
                                     <div class="btn_view_more"><img
                                             src="https://www.lifeplus.co.kr/_resource/_web/images/main/pointer_cursor.png"
                                             alt=""></div>
                                 </div>
-
+                                <div class="img_bg top"
+                                style="transform: translate(0%, -100%) matrix(1, 0, 0, 1, 0, 0);"></div>
                                 <div class="img_bg right" style="width: 0px;"></div>
                             </div>
                         </div>
-                        <div class="copy_box left" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <div class="copy_box left" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); transform:translateX(0px);">
                             <div class="copy_num enMP">02</div>
                             <div class="copy_area">
                                 <div class="copy_title">
@@ -242,8 +242,6 @@
                                 </div>
                                 <div class="copy_sub_txt" style="opacity: 1;">하고싶은 일을 하세요</div>
                                 <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                                <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
-                            </div>
                         </div>
                     </div>
                 </article>
@@ -251,15 +249,15 @@
             <div class="section ">
                 <article>
                     <br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br>
+                    
                     <div class="sec_inner sec_type3">
                         <div class="img_box left">
                             <div class="img_area">
                                 <div class="img_inner main_img_link">
                                     <a href="#">
-                                        <img src="/static/bs/images/main.png"
-                                            alt="" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                                        <img src="/static/bs/images/main03.png"
+                                            alt="" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); width: 80%; height: 80%; float:top; margin-top:15%; transform:translateX(150px);">
                                     </a>
                                     <div class="btn_cursor">
                                         <div class="btn_view_more"><img
@@ -267,6 +265,8 @@
                                                 alt=""></div>
                                     </div>
                                 </div>
+                                <div class="img_bg top"
+                                    style="transform: translate(0%, -100%) matrix(1, 0, 0, 1, 0, 0);"></div>
                                 <div class="img_bg left" style="width: 0px;"></div>
                             </div>
                         </div>
@@ -276,9 +276,8 @@
                                 <div class="copy_title">
                                     <br>JOIN TO US
                                 </div>
-                                <div class="copy_sub_txt" style="opacity: 1;">대파에 참여하세요.</div>
+                                <div class="copy_sub_txt" style="opacity: 1; vertical-align: bottom;">대파에 참여하세요.</div>
                                 <!-- 밑에 링크 로그인 창으로 바꾸기-->
-                                <div class="btn_more" style="opacity: 1;"><a href="main" class="g_btn_view_more">VIEW MORE</a></div>
                             </div>
                         </div>
                     </div>

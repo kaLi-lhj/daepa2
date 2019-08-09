@@ -5,12 +5,13 @@ span {
     text-align: center;
     font-size:40px;
     font-weight:bold;
-    font-family: NanumGothic;
+    font-family: Shadow;
+    color: #3f3f3f;
  }
 .btn_group button {
-    border: 1px solid #ED3847;
-    background-color: #ED3847;
-    color: white;
+    border: 1px solid white;
+    background-color: white;
+    color : #3f3f3f;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -18,10 +19,10 @@ span {
     font-size: 20px;
     font-weight:bold;
     cursor: pointer;
-    font-family: NanumGothic;
+    font-family: Nanumgothic;
 }
 .vl {
-    border-left: 6px solid #ED3847;
+    border-left: 6px solid ;
     height: 45%;
     position: absolute;
     left: 50%;
