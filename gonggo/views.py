@@ -4,8 +4,17 @@ from django.urls import reverse
 from gonggo.models import Gonggo
 
 # Create your views here.
-def mainIndex(request):
-    return render(request, 'gonggo/index.html')
+def mainIndex(request, idx):
+    try:
+        gonggo = Gonggo.objects.get(id=idx)
+        
+        data = {
+            'gonggo':gonggo
+        }
+        return render(request, 'gonggo/index.html', data)
+    except Gonggo.DoesNotExist:
+        return HttpResponse('해당 페이지가 존재하지 않습니다.')
+    
 
 def gonggoForm(request):
     if request.method == 'GET':
@@ -40,16 +49,19 @@ def gonggoDetail(request, idx):
     출력 정보 -> id, title, sub_titie, context, view_cnt
                 like_cnt, hate_cnt, create_date, update_date
     '''
-    try:
-        gonggo = Gonggo.objects.get(id=idx)
-        
-        data = {
-            'gonggo':gonggo
-        }
-        return render(request, 'gonggo/detail.html', data)
-    except Gonggo.DoesNotExist:
-        return HttpResponse('해당 페이지가 존재하지 않습니다.')
+    if request.method == 'GET':
+        try:
+            gonggo = Gonggo.objects.get(id=idx)
+            
+            data = {
+                'gonggo':gonggo
+            }
+            return render(request, 'gonggo/detail.html', data)
+        except Gonggo.DoesNotExist:
+            return HttpResponse('해당 페이지가 존재하지 않습니다.')
 
+    elif request.method == 'POST':
+        return render('gonggo:detail', gonggo.id)
 
 def gonggoAdd(request):
     if request.method == 'GET':
@@ -74,8 +86,8 @@ def gonggoAdd(request):
         gonggo.phonenum=request.POST['phonenum']
         gonggo.email=request.POST['email']
         gonggo.save()
-
-        return redirect('gonggo:detail', gonggo.id)
+        
+        return redirect('gonggo:detail', gonggo)
         
 def gonggoUpdate(request, idx):
     if request.method == 'GET':
