@@ -56,12 +56,12 @@ def join1(request):
                 job = request.POST["job"]
                 address = request.POST["address"]
                 email = request.POST["email"]
-                phone_num = request.POST["phone_num"]
+                phonenum = request.POST["phonenum"]
                 gender = request.POST["gender"]
                 date_of_birth = request.POST["date_of_birth"]
                 interest = request.POST.get("interest",'False')
                 
-                profile = Profile(user=user, name=name, job=job, address=address, email=email, phone_num=phone_num, gender=gender, date_of_birth=date_of_birth, interest = interest)
+                profile = Profile(user=user, name=name, job=job, address=address, email=email, phonenum=phonenum, gender=gender, date_of_birth=date_of_birth, interest = interest)
                 profile.save()
                
                 return redirect('login')
@@ -106,11 +106,11 @@ def join2(request):
                 job = request.POST["job"]
                 address = request.POST["address"]
                 email = request.POST["email"]
-                phone_num = request.POST["phone_num"]
+                phonenum = request.POST["phonenum"]
                 
                 
                 company=request.POST['company']
-                profile = Profile(user=user, name=name, job=job, address=address, email=email, phone_num=phone_num, company=company)
+                profile = Profile(user=user, name=name, job=job, address=address, email=email, phonenum=phonenum, company=company)
                 profile.save()
                
                 return redirect('login')
@@ -160,7 +160,7 @@ def modi(request):
             'job' : user.profile.job,
             'address' : user.profile.address,
             'email': user.profile.email,
-            'phone_num' : user.profile.phone_num,
+            'phonenum' : user.profile.phonenum,
             'gender' : user.profile.gender,
             'date_of_birth' : user.profile.date_of_birth,
             'company' : user.profile.company,
@@ -173,7 +173,7 @@ def modi(request):
         user.profile.job = request.POST["job"]
         user.profile.address = request.POST["address"]
         user.profile.email = request.POST["email"]
-        user.profile.phone_num = request.POST["phone_num"]
+        user.profile.phonenum = request.POST["phonenum"]
         
         if user.profile.job == "employee":
             user.profile.gender = request.POST["gender"]

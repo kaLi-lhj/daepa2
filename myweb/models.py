@@ -11,7 +11,7 @@ class Profile(models.Model):
     # 주소
     address = models.TextField(blank=True)
     email = models.TextField(blank=True)
-    phone_num=models.TextField(blank=True)
+    phonenum=models.TextField(blank=True)
     # 회원가입 개인 질문
     gender = models.TextField(blank=True, default="0")
     date_of_birth=models.TextField(blank=True, default="0000-00-00")

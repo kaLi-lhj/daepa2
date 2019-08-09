@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('job', models.TextField(max_length=20)),
                 ('address', models.TextField(blank=True)),
                 ('email', models.TextField(blank=True)),
-                ('phone_num', models.TextField(blank=True)),
+                ('phonenum', models.TextField(blank=True)),
                 ('gender', models.TextField(blank=True)),
                 ('date_of_birth', models.TextField(blank=True)),
                 ('company', models.TextField(blank=True)),
