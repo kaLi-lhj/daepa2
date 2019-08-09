@@ -4,6 +4,11 @@ from django.urls import reverse
 from gonggo.models import Gonggo
 
 # Create your views here.
+def Indexmain(request):
+    
+    data = Gonggo.objects.all().order_by('id')
+    return render(request, 'main/index.html',{"gonggo":data})
+
 def mainIndex(request):
     # data = Gonggo.objects.get(id=1)
     data = Gonggo.objects.all().order_by('id')

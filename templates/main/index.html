@@ -36,15 +36,14 @@
     </div>
     <div id="header">
         <div class="navi" style="top: 0px;">
-
+            <div style="float:left; text-align:left; ">
+                <h1>
+                    <img src="/static/bs/images/logo1.png" style="width:50px; height:48px; float:left; margin-left:50px;"><span class="ir_text">
+                </h1>
+            </div>
             <ul class="nav_top">
 
-                <div style="float:left;">
-                    <h1>
-                        <a href="" class="btn_logo" onclick="eventTrack('');" title="대파"><span class="ir_text">대
-                                파</span></a>
-                    </h1>
-                </div>
+                
 
                 <div style="float:right;">
                     {% if user.is_authenticated %}
@@ -93,7 +92,7 @@
             <script src="https://www.lifeplus.co.kr/_resource/_web/js/main.js"></script>
 
         </div>
-        <div style="padding: 40px 15%;">
+        <div style="padding: 40px 15% 0;">
             <div style="height: 90px;
             display: block;
             position: relative;
@@ -102,7 +101,7 @@
             width : 1300p100%;
             background: #ED3847;
             border-radius: 3px;">
-                <h2 style="color: aliceblue; font-weight:lighter; padding: 30px; 15px;">대학생에게 경험을 주세요!
+                <h2 style="color: aliceblue; font-weight:lighter; padding: 30px; 15px ">대학생에게 경험을 주세요!
                     <a href="{% url 'gonggo:form' %}" type="button" style="right: 30px;
             color: #ED3847;
             font-size: 15px;
@@ -142,10 +141,10 @@
                                     {{item.title}}
                                 </div>
                                 <div class="cell" data-title="Job Title">
-                                    {{item.interest}}
+                                    {{item.get_interest_display}}
                                 </div>
                                 <div class="cell" data-title="Location">
-                                    {{item.workDetail}}
+                                    {{item.serviceAddr2}}
                                 </div>
                             </div>
                             {%endfor%}
@@ -171,10 +170,11 @@
             gtag('config', 'UA-23581568-13');
         </script>
 
-
+        <br>
+        
     
                         </div>
-                    </div>
+                    </div><a href="{% url 'gonggo:index' %}" style="font-style: bold; font-size: 20; text-align: right;">더 보기</a>
                 </div>
             </div>
     

@@ -33,15 +33,15 @@
     </div>
     <div id="header">
         <div class="navi" style="top: 0px;">
+            <div style="float:left; text-align:left; ">
+                <h1>
+                    <img src="/static/bs/images/logo1.png" style="width:50px; height:48px; float:left; margin-left:50px;"><span class="ir_text">
+                </h1>
+            </div>
 
             <ul class="nav_top">
 
-                <div style="float:left;">
-                    <h1>
-                        <a href="" class="btn_logo" onclick="eventTrack('');" title="대파"><span class="ir_text">대
-                                파</span></a>
-                    </h1>
-                </div>
+                
 
                 <div style="float:right;">
                     {% if user.is_authenticated %}
@@ -121,10 +121,10 @@
                                 {{item.title}}
                             </div>
                             <div class="cell" data-title="Job Title">
-                                {{item.interest}}
+                                {{item.get_interest_display}}
                             </div>
                             <div class="cell" data-title="Location">
-                                {{item.workDetail}}
+                                {{item.serviceAddr2}}
                             </div>
                         </div>
                         {%endfor%}

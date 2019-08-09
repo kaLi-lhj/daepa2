@@ -125,6 +125,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_URL = '/account/login/'
 LOGOUT_URL = '/account/logout/'
-LOGIN_REDIRECT_URL = '/main/'
+LOGIN_REDIRECT_URL = '/gonggo/main/'
 
 SESSION_SAVE_EVERY_REQUEST = True

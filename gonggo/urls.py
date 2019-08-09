@@ -5,6 +5,8 @@ app_name='gonggo'
 urlpatterns = (
     re_path(r'^$', views.mainIndex, name='index'),
 
+    re_path(r'^main/$', views.Indexmain, name='mainindex'),
+
      # 공고 게시물(id)의 세부 정보
     re_path(r'^([0-9]+)/$', views.gonggoDetail, name='detail'),
 
