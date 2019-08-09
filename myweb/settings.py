@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myweb', 'board', 'news', 'webtoon', 'gonggo', 'error', 'main', 'modi'
+    'myweb', 'board', 'news', 'webtoon', 'gonggo', 'error', 'main', 'modi', 
 ]
 
 MIDDLEWARE = [

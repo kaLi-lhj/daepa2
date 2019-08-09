@@ -108,3 +108,4 @@ def boardLikeHate(request):
         return redirect('board:detail', idx)
     else:
         return redirect('err:message', 'noAuth')
+

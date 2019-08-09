@@ -113,7 +113,7 @@ ctrl+k+u : 다중주석해제 -->
                         
                     </div>
                 </li>
-                <li><a href="https://www.lifeplus.co.kr/now" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_story');"><span class="en">STORY</span></a></li>
+                <li><a href="https://www.lifexplus.co.kr/now" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_story');"><span class="en">STORY</span></a></li>
                 
                 <li><a href="https://www.lifeplus.co.kr/ambassador" class="mot2 nowMove" onclick="eventTrack('lifeplus2019_gnb_ambassador');"><span>AMBASSADOR</span></a></li>
                 <li><a href="https://www.lifeplus.co.kr/notification" class="mot2" onclick="eventTrack('lifeplus2019_gnb_notification');"><span>NOTIFICATION</span></a></li> -->
@@ -123,6 +123,7 @@ ctrl+k+u : 다중주석해제 -->
                     <li>
                         <a href="#">
                             <h2>{{ user.profile.name }}님 환영합니다.</h2>
+                            <h2>{{user.profile.interest}}</h2>
                         </a>
                     </li>
                     <li>
@@ -166,7 +167,7 @@ ctrl+k+u : 다중주석해제 -->
         </div>
         <button>VIEW MORE</button>
         <br>
-        <a href="{% url 'gonggo:index' %}"><h2>공고</h2></a>
+        <a href="{% url 'gonggo:form' %}"><h2>공고작성하기</h2></a>
 
 
     </div>

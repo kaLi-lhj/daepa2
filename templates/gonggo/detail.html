@@ -1,0 +1,218 @@
+
+{% block title %}{{ board.title }}{% endblock %}
+{% block content %}
+<div class="blog-header">
+    <div class="container">
+        <h1 class="blog-title">{{ board.title }}</h1>
+    </div>
+</div>
+<div class="blog-post">
+    <div class="container">
+        
+        <p><table border="0" class="tableStyle_thleft col border_bottom_none">
+                <colgroup>
+                    <col width="25%">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row"><label for="title"><h3>채용제목 *</h3></label></th>
+                        <th>
+                        <td class="item"><input name="title" type="text" id="title" title="채용제목 입력"
+                                class="width95p" required=""></td></th>
+                    </tr>
+                </tbody>
+            </table>
+            <!--모집요강-->
+            <div id="job_summary01" class="mt50">
+                <h3>모집요강</h3>
+                <table border="0" class="tableStyle_thleft col">
+                    
+                    <colgroup>
+                        <col width="25%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><label for="oneDep">모집직종 <span class="fc_red">*</span></label>
+                            </th>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <input type="radio" name="interest" id="1" value = "디자인" />
+                                            <label for="one">디자인</label>
+                                            
+                                            <div class="check"></div>
+                                        </li>
+                                        
+                                        <li>
+                                            <input type="radio" name="interest" id="2" value = "번역"/>
+                                            <label for="two">번역</label>
+                                            
+                                            <div class="check"></div>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="interest" id="3" value = "연구보조"/>
+                                            <label for="three">연구보조</label>
+                                            
+                                            <div class="check"></div>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="interest" id="4" value = "프로그래밍"/>
+                                            <label for="four">프로그래밍</label>
+                                            
+                                            <div class="check"></div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            <td>
+                            </tr>
+                            <tr></tr>    
+                            <th scope="row"><label for="workDetail">직무내용 <span
+                                        class="fc_red">*</span></label></th>
+                            </td>
+                            <td class="item">
+                                
+                                <textarea name="workDetail" id="workDetail" cols="50" rows="5"
+                                    class="width95p mt5" title="직무내용 입력" required=""
+                                    onkeyup="chkByte(this,800);"></textarea>
+                            </td>
+                        </tr>
+                        
+                       
+                        
+                        <tr>
+                            <th scope="row"><label for="hireCount">모집인원 <span
+                                        class="fc_red">*</span></label></th>
+                            <td class="item"><input name="hireCount" type="text" value="" id="hireCount"
+                                    title="모집인원" class="width40p" required="" onkeyup="onlyNumber(this);"
+                                    maxlength="4"> 명</td>
+                        </tr>
+                            <th scope="row">근무예정지 <span class="fc_red">*</span></th>
+                            <td>
+                                
+                                <div class="item">
+                                   
+                                    <input id="serviceAddr2" name="serviceAddr2" title="상세주소"
+                                        class="width95p mt5" type="text" value="">
+                                    <input name="location" id="location" type="hidden">
+                                </div>
+                                
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <!--//모집요강-->
+
+            <!--근무조건-->
+            <div id="job_summary02" class="mt50">
+                <h4>근무조건</h4>
+                <table border="0" class="tableStyle_thleft col">
+                    <colgroup>
+                        <col width="25%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><label for="salary">임금조건 <span class="fc_red">*</span></label>
+                            </th>
+                            <td>
+                                <div class="item">
+                                    <select name="hireMoneyType" id="salary" title="임금 유형을 선택하세요"
+                                        onchange="fn_changePayType(this);">
+
+                                        <option value="SALARY_YEAR" label="연봉">연봉</option>
+
+                                        <option value="SALARY_MONTH" label="월급">월급</option>
+
+                                        <option value="SALARY_DAY" label="일급">일급</option>
+
+                                        <option value="SALARY_TIME" label="시급">시급</option>
+
+                                    </select>
+                                    <input type="text" size="10" name="minMoney" id="minMoney" value=""
+                                        title="최소금액" class="width100px mr3" required="required"
+                                        onkeyup="onlyNumber(this); num_format(this);" maxlength="13"> 원 이상 ~
+                                    <input type="text" size="10" name="highMoney" id="highMoney" value=""
+                                        title="최대금액" class="width100px ml3" required="required"
+                                        onkeyup="onlyNumber(this); num_format(this);" maxlength="13"> 원 이하
+                                    
+                                </div>
+                
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <th scope="row"><label for="stWorkTime">근무시간 <span
+                                        class="fc_red">*</span></label></th>
+                            <td>
+                                
+                                <span class="db cm mt3"><br>(요일별 각각의 근무시간을 상세히 입력하셔야 합니다.)<br></span>
+                                <textarea name="workTimeDetailContent" id="workTimeDetailContent" cols="50"
+                                    rows="5" class="width95p mt5" title="직무내용 입력"
+                                    onkeyup="chkByte(this,300);"></textarea>
+                                
+                               
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <!--//근무조건-->
+
+            
+
+            <!--채용담당자-->
+            <div class="hirePerson mt50" id="hirePerson1">
+                <h4>채용담당자</h4>
+                <table border="0" class="tableStyle_thleft col">
+                        <colgroup>
+                            <col width="25%">
+                            <col>
+                        </colgroup>    
+                    <tbody>
+                        <tr>
+                            <th scope="row"><label for="manager1">담당자명 <span
+                                        class="fc_red">*</span></label></th>
+                            <td><input id="manager1" required="required"
+                                    name="listVO[0].manager" title="담당자명" class="width30p mr10" type="text"
+                                    value="" onkeyup="chkByte(this,20);"> (예 : 홍길동)</td>
+                                    
+                        </tr>
+                        <tr>
+                        
+                            <th scope="row" class="blLine">휴대전화<span class="fc_red">*</span></th>
+                                    
+                            <td>
+                            <input id="phonenum" name="phonenum" maxlength="15" type="text" value=""
+                                required="required">
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <th colspan="row" scope="row"><label for="email1">이메일<span
+                                        class="fc_red">*</span></label></th>
+                            <td class="item"><input id="email" name="email" title="이메일"
+                                    required="required" type="email" maxlength="30"
+                                    value="">
+                                
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table></p>
+    </div>
+</div>
+<div class="text-right">
+    <div class="row btn-group">
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'gonggo:index' %}''">목록</button>
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'gonggo:update' %}''">수정</button>
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href='{% url 'gonggo:delete' %}''">삭제</button>
+    </div>
+</div>
+{% endblock %}
